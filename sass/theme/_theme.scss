@@ -1,0 +1,76 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+body {
+	font-family: 'Open Sans', sans-serif;	
+}
+
+a {
+	.woocommerce-product-details__short-description {
+		p {
+			color: #666;
+		}
+	}
+	.star-rating {
+		span {
+			color: #f9ba00;
+		}
+	}
+}
+#menu-over-dfo {
+	.menu-item {
+		float: none;
+		display: block;
+	}
+}
+h3.widget-title {
+	font-size: 20px;
+}
+.navbar-inverse {
+	.navbar-nav {
+		.nav-link {
+		border-radius: 6px;
+		  @media (min-width: 992px) {
+			padding-left: 1.3rem;
+			padding-right: 1.3rem;
+		  }
+		}
+		.active {
+			.nav-link  {
+				background-color: #1571ba;
+			}
+		}
+	}
+}
+.home-hero {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e4f1fa+0,bee3fc+100 */
+	background: #2277bb; /* Old browsers */
+	background: -moz-linear-gradient(top, #2277bb 0%, #69bbfd 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #2277bb 0%,#69bbfd 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #2277bb 0%,#69bbfd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2277bb', endColorstr='#69bbfd',GradientType=0 ); /* IE6-9 */
+	padding: 2em 0;
+	margin-top: -30px;
+	color: #fff;
+}
+.home-hero-image {
+	margin: -32px 0;
+}
+.home-title {
+	text-align: center;
+	background-color: #f1f9ff;
+	padding: 10px 0;
+	margin-bottom: 20px;
+	h3 {
+		color: #005ea9;
+		font-style: italic;
+		font-weight: 400;
+		font-size: 24px;
+	}
+}
+.home-products {
+	padding-left: 0;
+	li {
+		padding: 15px 0;
+		border-bottom: solid 1px #eee;
+		list-style: none;
+	}
+}
