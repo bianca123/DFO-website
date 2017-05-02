@@ -17,33 +17,31 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<!-- Home hero -->
+<div class="home-hero">
 
-	<div class="home-hero">
-
-		<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
-		<div class="row">
-			<div class="col-md-8">
-			<?php the_field('home_hero_tekst'); ?>
-			</div>
-			<div class="col home-hero-image">
-			<?php
-			$image = get_field('home_hero_afbeelding');
-
-			if( !empty($image) ): ?>
-
-				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-			<?php endif; ?>
-			</div>
-			</div>
+	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
+	<div class="row">
+		<div class="col-md-8">
+		<?php the_field('home_hero_tekst'); ?>
 		</div>
-		
+		<div class="col home-hero-image">
+		<?php
+		$image = get_field('home_hero_afbeelding');
+
+		if( !empty($image) ): ?>
+
+			<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+		<?php endif; ?>
+		</div>
+		</div>
 	</div>
 	
-	<div class=" home-title" id="content" tabindex="-1">
-		<h3><?php the_field('home_products_title'); ?></h3>
-	</div>
+</div>
+<!-- End of home hero -->
+<!-- Beginning of home content -->
+<div class="wrapper" id="page-wrapper">	
 
 	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
@@ -82,21 +80,87 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			</div>
 			<div class="col">
-				<?php the_field('team_dfo'); ?>
+				
 			</div>
 
-		</div><!-- #primary -->
+		</div><!-- .row -->
 
-		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
+	</div><!-- Container end -->
 
-			<?php get_sidebar( 'right' ); ?>
+	<div class="clients_home">
+		<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
+		
+			<div class="row">
+				<div class=" clients_title">
+					<h3><?php the_field('clients_title'); ?></h3>
+					<h4>Bekijk hieronder een greep van onze klanten</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				
+					<?php
 
-		<?php endif; ?>
+						$post_objects = get_field('clients_home');
 
-	</div><!-- .row -->
+						if( $post_objects ): ?>
+							<ul class="client_list">
+							<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+								<?php setup_postdata($post); ?>
+								<li class="row">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
+										<img src="<?php the_field('item_afbeelding'); ?>" />
+									</a>
+								</li>
+							<?php endforeach; ?>
+							</ul>
+							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>	
 
-</div><!-- Container end -->
+						<?php endif;
+
+						?>
+				</div>
+			</div>
+		
+		</div><!-- Container end -->
+	</div>
+	
+	<div class="team_home">
+		<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
+		
+			<div class="row">
+				<div class="team_title">
+					<?php the_field('team_dfo'); ?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				
+					<?php
+
+						$post_objects = get_field('team_home');
+
+						if( $post_objects ): ?>
+							<ul class="team_list">
+							<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+								<?php setup_postdata($post); ?>
+								<li class="row">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
+										<img src="<?php the_field('item_afbeelding'); ?>" />
+									</a>
+								</li>
+							<?php endforeach; ?>
+							</ul>
+							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>	
+
+						<?php endif;
+
+						?>
+				</div>
+			</div>
+		
+		</div><!-- Container end -->
+	</div>
 
 </div><!-- Wrapper end -->
 

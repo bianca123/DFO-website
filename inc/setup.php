@@ -62,6 +62,49 @@ if ( ! function_exists( 'understrap_setup' ) ) :
 		 * Adding Thumbnail basic support
 		 */
 		add_theme_support( 'post-thumbnails' );
+		
+		/* Add Client post */
+		add_action( 'init', 'create_post_type' );
+		function create_post_type() {
+		  register_post_type( 'dfo_klanten',
+			array(
+			  'labels' => array(
+				'name' => __( 'Klanten' ),
+				'singular_name' => __( 'Klant' ),
+				'view_item'     => __( 'Bekijk klant', 'text_domain' ),
+				'add_new_item'  => __( 'Nieuwe klant toevoegen', 'text_domain' ),
+				'add_new'       => __( 'Nieuwe klant', 'text_domain' ),
+				'edit_item'     => __( 'Klant aanpassen', 'text_domain' ),
+				'update_item'   => __( 'Klanten updaten', 'text_domain' ),
+				'search_items'  => __( 'Zoek klant', 'text_domain' ),
+				'not_found'      => __( 'Geen klanten gevonden', 'text_domain' ),
+				'not_found_in_trash'  => __( 'Geen klanten gevonden in prullebak', 'text_domain' ),
+			  ),
+			  'public' => true,
+			  'has_archive' => false,
+			  'menu_icon'   => 'dashicons-universal-access-alt',
+			)
+		  );
+		  register_post_type( 'dfo_team',
+			array(
+			  'labels' => array(
+				'name' => __( 'Teamleden' ),
+				'singular_name' => __( 'Teamlid' ),
+				'view_item'     => __( 'Bekijk teamlid', 'text_domain' ),
+				'add_new_item'  => __( 'Nieuw teamlid toevoegen', 'text_domain' ),
+				'add_new'       => __( 'Nieuw teamlid toevoegen', 'text_domain' ),
+				'edit_item'     => __( 'Teamlid aanpassen', 'text_domain' ),
+				'update_item'   => __( 'Teamleden updaten', 'text_domain' ),
+				'search_items'  => __( 'Zoek teamlid', 'text_domain' ),
+				'not_found'      => __( 'Geen teamleden gevonden', 'text_domain' ),
+				'not_found_in_trash'  => __( 'Geen teamleden gevonden in prullebak', 'text_domain' ),
+			  ),
+			  'public' => true,
+			  'has_archive' => false,
+			  'menu_icon'   => 'dashicons-smiley',
+			)
+		  );
+		}
 
 		/*
 		 * Adding support for Widget edit icons in customizer
