@@ -1,0 +1,121 @@
+.woocommerce, 
+.woocommerce-page,
+.home-page {
+	.col2-set {
+
+		.col-1, .col-2 {
+			width: 48%;
+			max-width: 48%;
+		}
+	}
+	ul.products {
+		li.product {
+			border: 1px solid $gray-lightest;
+			padding: 0.6em;
+			.imagewrapper {
+				display: block;
+				height: 8em;
+				overflow: hidden;
+				background-color: $brand-custom;
+				margin-bottom: 1.3em;
+				position: relative;
+				.woocommerce-loop-product__title {
+					position: relative;
+					font-weight: bold;
+					height: 8em;
+					width: 14em;
+					vertical-align: middle;
+					text-align: center;
+					z-index: 1;
+					line-height: 1.2em;
+					display: table-cell;
+				}
+				img {
+					z-index: 10;
+					position: relative;
+					width: 100%;
+				}
+			}
+			p {
+				font-size: 0.9rem;
+			}
+			.star-rating {
+				height: 1em;
+				margin-top: -1.3em;
+				margin-bottom: 0.3em;
+				font-family: star;
+			}
+			.woocommerce-product-details__short-description {
+				margin-bottom: 2.5em;
+				height: 11em;
+				overflow: hidden;
+				p {
+					
+					margin-bottom: 0;
+				}
+			}
+			.price {
+				margin-top: -2em;
+				font-size: 1em;
+				color: #77a464;
+				display: block;
+				font-weight: 400;
+				margin-bottom: .5em;
+			}
+			.button {
+				background-color: $green;
+				color: $white;
+				padding: .5em 1em;
+				margin-top: 0;
+			}
+		}
+	}
+	#content {
+		div.product {
+			div.summary {
+				width: 25%;
+				background-color: $gray-lighter;
+				padding: 1em;
+			}
+			div.images {
+				width: 100%;
+				margin-bottom: 0;
+			}
+			p.price {
+				font-size: 1.5em;
+			}
+		} 
+		.product-description {
+			width: 72%;
+			float: left;
+			margin-bottom: 2em;
+		}
+		.woocommerce-review-link, 
+		.product_meta {
+			font-size: 0.9em;
+		}
+	}
+	button.button {
+		padding: .5em 1em;
+	}
+	button.button.alt {
+		background-color: $brand-success;
+		&:hover {
+			background-color: darken($brand-success, 10%);
+		}
+	}
+	.quantity {
+		.qty {
+			height: 2em;
+		}
+	}
+	.star-rating {
+		span {
+			color: $yellow;
+		}
+	}
+}	
+#woocommerce-wrapper {
+	margin-top: 50px;
+}
+

@@ -63,7 +63,7 @@ if ( ! function_exists( 'understrap_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		
-		/* Add Client post */
+		/* Add Custom posts */
 		add_action( 'init', 'create_post_type' );
 		function create_post_type() {
 		  register_post_type( 'dfo_klanten',

@@ -3,6 +3,16 @@ body {
 	font-family: 'Open Sans', sans-serif;	
 }
 
+h1 {
+	font-size: 2em;
+	color: $brand-primary;
+	font-weight: 600;
+	margin-bottom: 1em;
+}
+h2 {
+	font-size: 1.6em;
+}
+
 /* WIDGETS */
 
 h3.widget-title {
@@ -32,11 +42,66 @@ h3.widget-title {
 	margin-right: 2rem;
 	}
 	.navbar-nav {
+		
 	}
 }
+
+/* MAINNAV */
 .main-nav {
+	position: relative;
 	border-bottom: solid 2px $brand-primary;
+	.container {
+		position: static;
+		top: 0;
+		.navbar-nav {
+			li {
+				ul {
+					display: none;
+				}
+				&.active, 
+				&.current-menu-parent {
+					font-weight: bold;
+					ul {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 }
+/* END MAINNAV */
+
+/* SUBNAV */
+.sub-menu {
+	position: absolute;
+	left: 0;
+	bottom: -3.4em;
+	width: 100%;
+	background-color: $brand-primary;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		display: inline-block;
+		a.nav-link {
+			display: block;
+			color: $white;
+			font-weight: normal;
+			@media (min-width: 992px) {
+				padding: 1em 1.65em !important;
+			}
+		}
+		&.active,
+		&.current-product-parent{
+			a {
+			font-weight: bold;
+			}
+		}
+	}
+}
+/* END SUBNAV */
+
+
 
 /* FOOTER */
 
@@ -50,102 +115,6 @@ h3.widget-title {
 	background-color: $gray-lighter;
 	padding: 5px 0;
 }
-
-/* HOMEPAGE */
-
-.home-hero {
-	background-color:$brand-primary;
-	padding: 2em 0;
-	color: #fff;
-	.home-hero-image {
-		margin: -32px 0;
-	}
-	a {
-		color: #fff;
-	}
-}
-.clients_home {
-	background-color: $brand-custom;
-	padding: 2em 0;	
-	.clients_title {
-		text-align: center;
-		padding: 1rem 0;
-		width: 100%;
-		h3 {
-			color: #005ea9;
-			font-weight: 600;
-			font-size: 2em;
-		}
-		h4 {
-			color: #005ea9;
-			font-size: 1.2em;
-		}
-	}
-	.client_list {
-		li {
-			display: block;
-			float: left;
-			width: 14em;
-			height: 8em;
-			background-color: #fff;
-			margin-left: 2em;
-			vertical-align: middle;
-			a {
-				width: 100%;
-				height: auto;
-				img {
-					width: 100%;
-				}
-			}
-		}
-		:first-child {
-			margin-left: 0;
-		}
-	}
-}
-.team_home {
-	padding: 2em 0;	
-	.team_title {
-		text-align: center;
-		padding: 1rem 0;
-		width: 100%;
-		h3 {
-			color: #005ea9;
-			font-weight: 600;
-			font-size: 2em;
-		}
-		h4 {
-			color: #005ea9;
-			font-size: 1.2em;
-		}
-	}
-	.team_list {
-		li {
-			display: block;
-			float: left;
-			width: 10em;
-			height: 14em;
-			background-color: #fff;
-			margin-left: 2em;
-			vertical-align: middle;
-			a {
-				width: 100%;
-				height: auto;
-				img {
-					width: 100%;
-				}
-			}
-		}
-		:first-child {
-			margin-left: 0;
-		}
-	}
-}
-.home-products {
-	padding-left: 0;
-	li {
-		padding: 15px 0;
-		border-bottom: solid 1px #eee;
-		list-style: none;
-	}
+.site-info {
+	font-size: 0.8em;
 }

@@ -41,13 +41,13 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 </div>
 <!-- End of home hero -->
 <!-- Beginning of home content -->
-<div class="wrapper" id="page-wrapper">	
+<div class="wrapper home-page woocommerce" id="page-wrapper">	
 
 	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 
-			<div class="col-md-8">
+			<div class="col-md-9">
 
 				<?php
 
@@ -60,15 +60,37 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					$post_objects = get_field('producten_home');
 
 					if( $post_objects ): ?>
-						<ul class="home-products">
+						<ul class="products home-products">
 						<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 							<?php setup_postdata($post); ?>
-							<li class="row">
-								<div class="col-md-3"><?php the_post_thumbnail(); ?></div>
-								<div class="col">
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								<?php the_excerpt(); ?>
+							<li class="product">
+								<a href="<?php echo get_permalink( $id, $context ); ?> ">
+								<div class="imagewrapper">
+									<?php the_post_thumbnail(); ?>
+									<h2 class="woocommerce-loop-product__title"><?php the_title(); ?></h2>
 								</div>
+								<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+								<div class="woocommerce-product-details__short-description">
+									<?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ); ?>
+								</div>
+								</a>
+								<?php if ( $price_html = $product->get_price_html() ) : ?>
+									<span class="price"><?php echo $price_html; ?></span>
+								<?php endif; ?>
+								<?php
+								global $product;
+
+									echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+										sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">%s</a>',
+											esc_url( $product->add_to_cart_url() ),
+											esc_attr( isset( $quantity ) ? $quantity : 1 ),
+											esc_attr( $product->get_id() ),
+											esc_attr( $product->get_sku() ),
+											esc_attr( isset( $class ) ? $class : 'button product_type_simple add_to_cart_button ajax_add_to_cart' ),
+											esc_html( $product->add_to_cart_text() )
+										),
+									$product );
+								?>
 							</li>
 						<?php endforeach; ?>
 						</ul>
@@ -79,53 +101,15 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					?>
 
 			</div>
-			<div class="col">
-				
+			<div class="col opleidingen-home">
+				<h2>Deze opleidingen gaan binnenkort van start</h2>
 			</div>
 
 		</div><!-- .row -->
 
 	</div><!-- Container end -->
-
-	<div class="clients_home">
-		<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
-		
-			<div class="row">
-				<div class=" clients_title">
-					<h3><?php the_field('clients_title'); ?></h3>
-					<h4>Bekijk hieronder een greep van onze klanten</h4>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-				
-					<?php
-
-						$post_objects = get_field('clients_home');
-
-						if( $post_objects ): ?>
-							<ul class="client_list">
-							<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-								<?php setup_postdata($post); ?>
-								<li class="row">
-									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
-										<img src="<?php the_field('item_afbeelding'); ?>" />
-									</a>
-								</li>
-							<?php endforeach; ?>
-							</ul>
-							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>	
-
-						<?php endif;
-
-						?>
-				</div>
-			</div>
-		
-		</div><!-- Container end -->
-	</div>
 	
-	<div class="team_home">
+		<div class="team_home">
 		<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 		
 			<div class="row">
@@ -146,7 +130,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 								<?php setup_postdata($post); ?>
 								<li class="row">
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
-										<img src="<?php the_field('item_afbeelding'); ?>" />
+										<img src="<?php the_field('foto_team'); ?>" />
+										<p><?php the_title(); ?></p>
 									</a>
 								</li>
 							<?php endforeach; ?>
@@ -156,6 +141,44 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						<?php endif;
 
 						?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="title">
+					<h3><?php the_field('clients_title'); ?></h3>
+				</div>
+			</div>
+		
+		</div><!-- Container end -->
+	</div>
+
+	<div class="contact_home">
+		<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
+		
+			<div class="row">
+				<div class=" contact_title">
+					<h3><?php the_field('contact_title'); ?></h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<?php the_field('adres_1'); ?>
+				</div>
+				<div class="col-md-4">
+					<?php the_field('adres_2'); ?>
+				</div>
+				<div class="col-md-4">
+					<?php the_field('adres_3'); ?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<?php the_field('contact_text'); ?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<br /><iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9788.844012746065!2d5.465621!3d52.166857!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6461e8b92bf4b%3A0xe4d2d369c8aa107c!2sDe+Wel+14%2C+3871+MV+Hoevelaken%2C+Nederland!5e0!3m2!1snl!2sus!4v1496049926582" width="100%" height="250" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 				</div>
 			</div>
 		

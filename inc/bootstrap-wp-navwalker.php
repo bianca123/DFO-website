@@ -34,7 +34,7 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul class=\" dropdown-menu\" role=\"menu\">\n";
+		$output .= "\n$indent<div class=\" sub-menu\"><div class=\"container\"><ul role=\"menu\">\n";
 	}
 
 	/**
@@ -77,7 +77,7 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			  $class_names .= ' dropdown';
 			*/
 			if ( $args->has_children && $depth === 0 ) {
-				$class_names .= ' dropdown';
+
 			} elseif ( $args->has_children && $depth > 0 ) {
 				$class_names .= ' dropdown-submenu';
 			}
@@ -105,9 +105,8 @@ class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
 			// If item has_children add atts to a.
 
 			if ( $args->has_children && $depth === 0 ) {
-				$atts['href']        = '#';
-				$atts['data-toggle'] = 'dropdown';
-				$atts['class']       = 'nav-link dropdown-toggle';
+				$atts['class']       = 'nav-link';
+				$atts['href']  = ! empty( $item->url ) ? $item->url : '';
 			} else {
 				$atts['href']  = ! empty( $item->url ) ? $item->url : '';
 				$atts['class'] = 'nav-link';

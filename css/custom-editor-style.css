@@ -9211,6 +9211,15 @@ h1.navbar-brand a:hover {
 body {
   font-family: 'Open Sans', sans-serif; }
 
+h1 {
+  font-size: 2em;
+  color: #005ea9;
+  font-weight: 600;
+  margin-bottom: 1em; }
+
+h2 {
+  font-size: 1.6em; }
+
 /* WIDGETS */
 h3.widget-title {
   font-size: 20px; }
@@ -9231,9 +9240,44 @@ h3.widget-title {
 .navbar-toggleable-md .navbar-brand {
   margin-right: 2rem; }
 
+/* MAINNAV */
 .main-nav {
+  position: relative;
   border-bottom: solid 2px #005ea9; }
+  .main-nav .container {
+    position: static;
+    top: 0; }
+    .main-nav .container .navbar-nav li ul {
+      display: none; }
+    .main-nav .container .navbar-nav li.active, .main-nav .container .navbar-nav li.current-menu-parent {
+      font-weight: bold; }
+      .main-nav .container .navbar-nav li.active ul, .main-nav .container .navbar-nav li.current-menu-parent ul {
+        display: block; }
 
+/* END MAINNAV */
+/* SUBNAV */
+.sub-menu {
+  position: absolute;
+  left: 0;
+  bottom: -3.4em;
+  width: 100%;
+  background-color: #005ea9;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .sub-menu li {
+    display: inline-block; }
+    .sub-menu li a.nav-link {
+      display: block;
+      color: #fff;
+      font-weight: normal; }
+      @media (min-width: 992px) {
+        .sub-menu li a.nav-link {
+          padding: 1em 1.65em !important; } }
+    .sub-menu li.active a, .sub-menu li.current-product-parent a {
+      font-weight: bold; }
+
+/* END SUBNAV */
 /* FOOTER */
 #menu-over-dfo .menu-item {
   float: none;
@@ -9243,9 +9287,11 @@ h3.widget-title {
   background-color: #eceeef;
   padding: 5px 0; }
 
-/* HOMEPAGE */
+.site-info {
+  font-size: 0.8em; }
+
 .home-hero {
-  background-color: #005ea9;
+  background: url("../img/header-bg.png") no-repeat 10% 20% #005ea9;
   padding: 2em 0;
   color: #fff; }
   .home-hero .home-hero-image {
@@ -9253,37 +9299,8 @@ h3.widget-title {
   .home-hero a {
     color: #fff; }
 
-.clients_home {
-  background-color: #e4eef6;
-  padding: 2em 0; }
-  .clients_home .clients_title {
-    text-align: center;
-    padding: 1rem 0;
-    width: 100%; }
-    .clients_home .clients_title h3 {
-      color: #005ea9;
-      font-weight: 600;
-      font-size: 2em; }
-    .clients_home .clients_title h4 {
-      color: #005ea9;
-      font-size: 1.2em; }
-  .clients_home .client_list li {
-    display: block;
-    float: left;
-    width: 14em;
-    height: 8em;
-    background-color: #fff;
-    margin-left: 2em;
-    vertical-align: middle; }
-    .clients_home .client_list li a {
-      width: 100%;
-      height: auto; }
-      .clients_home .client_list li a img {
-        width: 100%; }
-  .clients_home .client_list :first-child {
-    margin-left: 0; }
-
 .team_home {
+  background-color: #e4eef6;
   padding: 2em 0; }
   .team_home .team_title {
     text-align: center;
@@ -9300,25 +9317,111 @@ h3.widget-title {
     display: block;
     float: left;
     width: 10em;
-    height: 14em;
-    background-color: #fff;
+    height: 18.3em;
     margin-left: 2em;
-    vertical-align: middle; }
+    background-color: #fff;
+    border: solid 2px #fff; }
     .team_home .team_list li a {
       width: 100%;
-      height: auto; }
+      height: auto;
+      line-height: 1.2em; }
       .team_home .team_list li a img {
         width: 100%; }
+      .team_home .team_list li a p {
+        padding: 0.5em;
+        margin-bottom: 0; }
+    .team_home .team_list li a:hover {
+      text-decoration: none; }
   .team_home .team_list :first-child {
     margin-left: 0; }
+  .team_home .title {
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%; }
+    .team_home .title h3 {
+      color: #005ea9;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 2em; }
 
 .home-products {
   padding-left: 0; }
   .home-products li {
-    padding: 15px 0;
-    border-bottom: solid 1px #eee;
-    list-style: none; }
+    width: 30% !important;
+    margin: 0 0 1.4em 1.4em !important; }
+    .home-products li h2 {
+      font-size: 1em;
+      color: #005ea9; }
 
+.opleidingen-home {
+  background-color: #f7f7f9;
+  margin-bottom: 1em; }
+  .opleidingen-home h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #005ea9;
+    margin-top: .5em; }
+
+.contact_home {
+  padding-top: 2em; }
+  .contact_home .contact_title {
+    padding: 1rem 0;
+    width: 100%; }
+    .contact_home .contact_title h3 {
+      font-weight: 600;
+      font-size: 2em; }
+
+/*.clients_home {
+	padding: 2em 0;	
+	.clients_title {
+		text-align: center;
+		padding: 1rem 0;
+		width: 100%;
+		h3 {
+			color: $brand-primary;
+			font-weight: 600;
+			font-size: 2em;
+		}
+		h4 {
+			color: $brand-primary;
+			font-size: 1.2em;
+		}
+	}
+	.client_list {
+		li {
+			display: block;
+			float: left;
+			width: 12.3em;
+			height: 8em;
+			background-color: $white;
+			margin-left: 2em;
+			vertical-align: middle;
+			a {
+				width: 100%;
+				height: 100%;
+				display: block;
+				vertical-align: middle;
+				position: relative;
+				border: solid 1px $brand-custom;
+				img {
+					max-height: 100%;  
+					max-width: 100%; 
+					width: auto;
+					height: auto;
+					position: absolute;  
+					top: 0;  
+					bottom: 0;  
+					left: 0;  
+					right: 0;  
+					margin: auto;
+				}
+			}
+		}
+		:first-child {
+			margin-left: 02;
+		}
+	}
+}*/
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style
@@ -9342,3 +9445,141 @@ h3.widget-title {
   .wpcf7 .wpcf7-validation-errors {
     color: #d9534f !important;
     border: 1px solid #eceeef !important; }
+
+.woocommerce .col2-set .col-1, .woocommerce .col2-set .col-2,
+.woocommerce-page .col2-set .col-1,
+.woocommerce-page .col2-set .col-2,
+.home-page .col2-set .col-1,
+.home-page .col2-set .col-2 {
+  width: 48%;
+  max-width: 48%; }
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product,
+.home-page ul.products li.product {
+  border: 1px solid #f7f7f9;
+  padding: 0.6em; }
+  .woocommerce ul.products li.product .imagewrapper,
+  .woocommerce-page ul.products li.product .imagewrapper,
+  .home-page ul.products li.product .imagewrapper {
+    display: block;
+    height: 8em;
+    overflow: hidden;
+    background-color: #e4eef6;
+    margin-bottom: 1.3em;
+    position: relative; }
+    .woocommerce ul.products li.product .imagewrapper .woocommerce-loop-product__title,
+    .woocommerce-page ul.products li.product .imagewrapper .woocommerce-loop-product__title,
+    .home-page ul.products li.product .imagewrapper .woocommerce-loop-product__title {
+      position: relative;
+      font-weight: bold;
+      height: 8em;
+      width: 14em;
+      vertical-align: middle;
+      text-align: center;
+      z-index: 1;
+      line-height: 1.2em;
+      display: table-cell; }
+    .woocommerce ul.products li.product .imagewrapper img,
+    .woocommerce-page ul.products li.product .imagewrapper img,
+    .home-page ul.products li.product .imagewrapper img {
+      z-index: 10;
+      position: relative;
+      width: 100%; }
+  .woocommerce ul.products li.product p,
+  .woocommerce-page ul.products li.product p,
+  .home-page ul.products li.product p {
+    font-size: 0.9rem; }
+  .woocommerce ul.products li.product .star-rating,
+  .woocommerce-page ul.products li.product .star-rating,
+  .home-page ul.products li.product .star-rating {
+    height: 1em;
+    margin-top: -1.3em;
+    margin-bottom: 0.3em;
+    font-family: star; }
+  .woocommerce ul.products li.product .woocommerce-product-details__short-description,
+  .woocommerce-page ul.products li.product .woocommerce-product-details__short-description,
+  .home-page ul.products li.product .woocommerce-product-details__short-description {
+    margin-bottom: 2.5em;
+    height: 11em;
+    overflow: hidden; }
+    .woocommerce ul.products li.product .woocommerce-product-details__short-description p,
+    .woocommerce-page ul.products li.product .woocommerce-product-details__short-description p,
+    .home-page ul.products li.product .woocommerce-product-details__short-description p {
+      margin-bottom: 0; }
+  .woocommerce ul.products li.product .price,
+  .woocommerce-page ul.products li.product .price,
+  .home-page ul.products li.product .price {
+    margin-top: -2em;
+    font-size: 1em;
+    color: #77a464;
+    display: block;
+    font-weight: 400;
+    margin-bottom: .5em; }
+  .woocommerce ul.products li.product .button,
+  .woocommerce-page ul.products li.product .button,
+  .home-page ul.products li.product .button {
+    background-color: #5cb85c;
+    color: #fff;
+    padding: .5em 1em;
+    margin-top: 0; }
+
+.woocommerce #content div.product div.summary,
+.woocommerce-page #content div.product div.summary,
+.home-page #content div.product div.summary {
+  width: 25%;
+  background-color: #eceeef;
+  padding: 1em; }
+
+.woocommerce #content div.product div.images,
+.woocommerce-page #content div.product div.images,
+.home-page #content div.product div.images {
+  width: 100%;
+  margin-bottom: 0; }
+
+.woocommerce #content div.product p.price,
+.woocommerce-page #content div.product p.price,
+.home-page #content div.product p.price {
+  font-size: 1.5em; }
+
+.woocommerce #content .product-description,
+.woocommerce-page #content .product-description,
+.home-page #content .product-description {
+  width: 72%;
+  float: left;
+  margin-bottom: 2em; }
+
+.woocommerce #content .woocommerce-review-link,
+.woocommerce #content .product_meta,
+.woocommerce-page #content .woocommerce-review-link,
+.woocommerce-page #content .product_meta,
+.home-page #content .woocommerce-review-link,
+.home-page #content .product_meta {
+  font-size: 0.9em; }
+
+.woocommerce button.button,
+.woocommerce-page button.button,
+.home-page button.button {
+  padding: .5em 1em; }
+
+.woocommerce button.button.alt,
+.woocommerce-page button.button.alt,
+.home-page button.button.alt {
+  background-color: #5cb85c; }
+  .woocommerce button.button.alt:hover,
+  .woocommerce-page button.button.alt:hover,
+  .home-page button.button.alt:hover {
+    background-color: #449d44; }
+
+.woocommerce .quantity .qty,
+.woocommerce-page .quantity .qty,
+.home-page .quantity .qty {
+  height: 2em; }
+
+.woocommerce .star-rating span,
+.woocommerce-page .star-rating span,
+.home-page .star-rating span {
+  color: #ffd500; }
+
+#woocommerce-wrapper {
+  margin-top: 50px; }

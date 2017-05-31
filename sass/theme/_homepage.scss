@@ -1,0 +1,155 @@
+.home-hero {
+	background: url("../img/header-bg.png") no-repeat 10% 20% $brand-primary;
+	padding: 2em 0;
+	color: $white;
+	.home-hero-image {
+		margin: -32px 0;
+	}
+	a {
+		color: $white;
+	}
+}
+
+.team_home {
+	background-color: $brand-custom;
+	padding: 2em 0;	
+	.team_title {
+		text-align: center;
+		padding: 1rem 0;
+		width: 100%;
+		h3 {
+			color: $brand-primary;
+			font-weight: 600;
+			font-size: 2em;
+		}
+		h4 {
+			color: $brand-primary;
+			font-size: 1.2em;
+		}
+	}
+	.team_list {
+		li {
+			display: block;
+			float: left;
+			width: 10em;
+			height: 18.3em;
+			margin-left: 2em;
+			background-color: $white;
+			border: solid 2px $white;
+			a {
+				width: 100%;
+				height: auto;
+				line-height: 1.2em;
+				img {
+					width: 100%;
+				}
+				p {
+					padding: 0.5em;
+					margin-bottom: 0;
+				}
+			}
+			a:hover {
+					text-decoration: none;
+				}
+		}
+		:first-child {
+			margin-left: 0;
+		}
+	}
+	.title {
+		text-align: center;
+		padding: 1rem 0;
+		width: 100%;
+		h3 {
+			color: $brand-primary;
+			font-weight: 400;
+			font-style: italic;
+			font-size: 2em;
+		}
+	}
+}
+.home-products {
+	padding-left: 0;
+	li {
+		width: 30% !important;
+		margin: 0 0 1.4em 1.4em !important;
+		h2 {
+			font-size: 1em;
+			color: $brand-primary;
+		}
+	}
+}
+.opleidingen-home {
+	background-color: $gray-lightest;
+	margin-bottom: 1em;
+	h2 {
+		font-size: 1.4em;
+		font-weight: bold;
+		color: $brand-primary;
+		margin-top: .5em;
+	}
+}
+
+.contact_home {
+	padding-top: 2em;
+	.contact_title {
+		padding: 1rem 0;
+		width: 100%;
+		h3 {
+			font-weight: 600;
+			font-size: 2em;
+		}
+	}
+}
+
+/*.clients_home {
+	padding: 2em 0;	
+	.clients_title {
+		text-align: center;
+		padding: 1rem 0;
+		width: 100%;
+		h3 {
+			color: $brand-primary;
+			font-weight: 600;
+			font-size: 2em;
+		}
+		h4 {
+			color: $brand-primary;
+			font-size: 1.2em;
+		}
+	}
+	.client_list {
+		li {
+			display: block;
+			float: left;
+			width: 12.3em;
+			height: 8em;
+			background-color: $white;
+			margin-left: 2em;
+			vertical-align: middle;
+			a {
+				width: 100%;
+				height: 100%;
+				display: block;
+				vertical-align: middle;
+				position: relative;
+				border: solid 1px $brand-custom;
+				img {
+					max-height: 100%;  
+					max-width: 100%; 
+					width: auto;
+					height: auto;
+					position: absolute;  
+					top: 0;  
+					bottom: 0;  
+					left: 0;  
+					right: 0;  
+					margin: auto;
+				}
+			}
+		}
+		:first-child {
+			margin-left: 02;
+		}
+	}
+}*/
