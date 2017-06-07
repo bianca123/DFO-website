@@ -114,8 +114,70 @@
 			color: $yellow;
 		}
 	}
+	a.button.alt,
+	input.button.alt {
+		background-color: $green;
+		padding: 0.6em 0.8em;
+		&:hover,
+		&:focus {
+			background-color: $darkgreen;
+		}
+	}
+	.cart-collaterals {
+		.cart_totals, {
+				width: 35%;
+			}
+	}
 }	
 #woocommerce-wrapper {
 	margin-top: 50px;
 }
+
+/* Form checkout */
+
+#yith-wcms-back-to-cart-button {
+	float: left;
+}
+#checkout_timeline.horizontal.text {
+	li {
+		background-color: $brand-custom;
+		padding-right: 0 !important;
+		width: 24.9%;
+		display: block;
+		float: left;
+		&:not(:last-child) {
+			margin-right: 1px;
+			.timeline-wrapper:after {
+				content: "" !important;
+			}
+		}
+		.timeline-step {
+			display: block !important;
+			padding: 12px 5px !important;
+			float: left;
+			&:after {
+				content: "" !important;
+			}
+		}
+		.timeline-label {
+			display: block !important;
+			float: left;
+			width: auto;
+			padding: 12px 5px !important;
+			&:after {
+				clear: both;
+			}
+		}
+	}
+	li.active {
+		background-color: $brand-primary;
+		color: $white;
+	}
+}
+form.checkout.woocommerce-checkout {
+	@media (min-width: 992px) {
+		width: 60%;
+	}
+}
+
 

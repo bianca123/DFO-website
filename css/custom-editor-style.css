@@ -9581,5 +9581,67 @@ h3.widget-title {
 .home-page .star-rating span {
   color: #ffd500; }
 
+.woocommerce a.button.alt,
+.woocommerce input.button.alt,
+.woocommerce-page a.button.alt,
+.woocommerce-page input.button.alt,
+.home-page a.button.alt,
+.home-page input.button.alt {
+  background-color: #5cb85c;
+  padding: 0.6em 0.8em; }
+  .woocommerce a.button.alt:hover, .woocommerce a.button.alt:focus,
+  .woocommerce input.button.alt:hover,
+  .woocommerce input.button.alt:focus,
+  .woocommerce-page a.button.alt:hover,
+  .woocommerce-page a.button.alt:focus,
+  .woocommerce-page input.button.alt:hover,
+  .woocommerce-page input.button.alt:focus,
+  .home-page a.button.alt:hover,
+  .home-page a.button.alt:focus,
+  .home-page input.button.alt:hover,
+  .home-page input.button.alt:focus {
+    background-color: #3a8f3a; }
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals,
+.home-page .cart-collaterals .cart_totals {
+  width: 35%; }
+
 #woocommerce-wrapper {
   margin-top: 50px; }
+
+/* Form checkout */
+#yith-wcms-back-to-cart-button {
+  float: left; }
+
+#checkout_timeline.horizontal.text li {
+  background-color: #e4eef6;
+  padding-right: 0 !important;
+  width: 24.9%;
+  display: block;
+  float: left; }
+  #checkout_timeline.horizontal.text li:not(:last-child) {
+    margin-right: 1px; }
+    #checkout_timeline.horizontal.text li:not(:last-child) .timeline-wrapper:after {
+      content: "" !important; }
+  #checkout_timeline.horizontal.text li .timeline-step {
+    display: block !important;
+    padding: 12px 5px !important;
+    float: left; }
+    #checkout_timeline.horizontal.text li .timeline-step:after {
+      content: "" !important; }
+  #checkout_timeline.horizontal.text li .timeline-label {
+    display: block !important;
+    float: left;
+    width: auto;
+    padding: 12px 5px !important; }
+    #checkout_timeline.horizontal.text li .timeline-label:after {
+      clear: both; }
+
+#checkout_timeline.horizontal.text li.active {
+  background-color: #005ea9;
+  color: #fff; }
+
+@media (min-width: 992px) {
+  form.checkout.woocommerce-checkout {
+    width: 60%; } }
