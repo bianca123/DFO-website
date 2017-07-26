@@ -1,0 +1,273 @@
+.home-hero {
+	padding: 2.5em 0;
+	background: url("../images/gebouw.jpg") no-repeat left top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	border-bottom: solid 1px $lightgrey;
+	.home-hero-tekst {
+		color: $white;
+		input {
+			padding: 0.8em 0.5em;
+			line-height: 1.2em;
+			border: solid 1px $lightgrey;
+			-webkit-border-top-left-radius: 3px;
+			-webkit-border-bottom-left-radius: 3px;
+			-moz-border-radius-topleft: 3px;
+			-moz-border-radius-bottomleft: 3px;
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+			float: left;
+			width: 80% !important;
+			font-size: 0.8em;
+		}
+		button {
+			-webkit-border-top-right-radius: 3px;
+			-webkit-border-bottom-right-radius: 3px;
+			-moz-border-radius-topright: 3px;
+			-moz-border-radius-bottomright: 3px;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+			background: $brand-primary;
+			line-height: 2em;
+			border: solid 1px $lightgrey;
+			color: $white;
+			margin-left: -2px;
+			font-size: 0.8em;
+			padding: 0.4em 1em;
+		}
+	}
+	.home-hero-product {
+		position: relative;
+		background: rgb(0, 118, 191);
+		background: rgba(0, 118, 191, 0.8);
+		-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+		box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+		-webkit-transition: background-color 0.5s ease; /* Safari */
+		padding: 3.3em 2.5em 1.5em 2.5em;
+		color: $white;
+		max-height: 15em;
+		overflow: hidden;
+		ul.products {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			flex-direction: row;
+			display: flex;
+			width: 100%;
+			min-height: 100px;
+			li {
+				display: list-item;
+				float: left;
+				min-width: 100%;
+				margin: 0 1.5em;
+				h3 {
+					font-size: 1.4em;
+				}
+				img {
+					width: 100%;
+				}
+				a {
+					padding: 0.3em 0.5em;
+					background: $lightgrey;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
+					border-radius: 3px;
+					color: $gray;
+					&:hover,
+					&:focus {
+						text-decoration: none;
+						background-color: $green;
+						color: $white;
+					}
+				}
+				.price {
+					color: #75ba58;
+				}
+			}
+		}
+		ul.dots {
+			list-style: none;
+			padding: 0 43%;
+			margin: 0;
+			display: flex;
+			width: 100%;
+			text-decoration: center;
+			li {
+				padding: 0 0.2em;
+				a {
+					color: $white;
+					font-size: 0.6em;
+					&:hover,
+					&:focus,
+					&:active {
+						text-decoration: none;
+						color: darken($brand-custom, 20%);
+					}
+				}
+			}
+		}
+	}
+	.uitgelicht {
+			position: absolute;
+			left: 5px;
+			top: 8px;
+			h4 {
+				font-size: 1em;
+				background-color: $brand-custom;
+				color: $brand-primary;
+				padding: 0.2em 0.5em;
+			}
+		}
+}
+
+.themes {
+	padding: 1.5em 0;
+	h2 {
+		color: $brand-primary;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		.menu-item-has-children {
+			display: inline-block;
+			width: 30%;
+			margin: 1em;
+			border: solid 1px $lightgrey;
+			a {
+				display: block;
+				padding: 0.2em 0.7em;
+				font-size: 1.2em;
+				-webkit-transition: background-color 0.5s ease; /* Safari */
+				transition: background-color 0.5s ease;
+				.fa {
+					display: none;
+				}
+				&:hover,
+				&:focus {
+					text-decoration: none;
+					background-color: $brand-custom;
+				}
+			}
+			.menu-item {
+				border-top: solid 1px $lightgrey;
+				a {
+				color: $gray;
+				font-size: 1.0em;
+				.fa {
+					float: right;
+					display: block;
+					margin-top: 0.3em;
+					}
+					&:hover,
+					&:focus {
+						background-color: $lightergrey;
+					}
+				}
+			}
+		}
+		.menu-item {
+			
+		}
+	}
+}
+
+.themes,
+.links {
+	padding: 0 0 1.5em 0;
+	.arrow-down {
+		width: 100%;
+		height: 2.5em;
+		background: url("../images/arrow-down.png") no-repeat center top;
+		margin-bottom: 1.5em;
+	}
+	h2 {
+		color: $brand-primary;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		li {
+			display: inline-block;
+			width: 30%;
+			margin: 1em;
+			a {
+				display: block;
+				width: 100%;
+				background: $white;
+				padding: 1em;
+				border: solid 1px darken($brand-custom, 20%);
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+				-webkit-transition: background-color 0.5s ease; /* Safari */
+				transition: background-color 0.5s ease;
+				.fa {
+					font-size: 62px;
+				}
+				&:hover,
+				&:focus {
+					text-decoration: none;
+					background: $brand-custom;
+					
+				}
+			}
+		}
+	}
+}
+.themes {
+	h2 {
+		color: $gray;
+	}
+	p {
+		font-size: 1.1em;
+	}
+	padding: 2.5em 0 1.5em 0;
+	ul {
+		li {
+			a {
+				background-color: $lightergrey;
+				text-align: center;
+				h3 {
+					margin: 0.5em 0 0 0;
+				}
+				&.small {
+					h3 {
+						font-size: 2.2em;
+						line-height: 1.3em;
+					}
+				}
+			}
+		}
+	}
+}
+.links {
+	background: url("../images/achtergrond.jpg") no-repeat left top #37a0e1;
+	ul {
+		li {
+			a {
+				border: solid 1px lighten($gray, 45%);
+				.fa {
+					float: left;
+					font-size: 62px;
+					margin: 0.5em 0.5em 0.5em 0;
+					&.fa-graduation-cap {
+						margin: 0.7em 0.35em 0.7em 0;
+						font-size: 54px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.contact_home {
+	margin: 2em 0;
+	iframe {
+		padding: 0 !important;
+		margin-top: 1.5em; 
+	}
+}

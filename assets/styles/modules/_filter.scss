@@ -1,0 +1,72 @@
+.filterwrap {
+  margin-bottom: 15px;
+  background: #f0f8f5;
+}
+.mod-filter {
+  padding: 20px 20px 5px;
+  font-size: 14px;
+  line-height: 22px;
+  color: $darkgrey;
+  strong {
+    font-weight: 600;
+	text-transform: lowercase;
+	font-size: 1.1em;
+  }
+  .filter {
+	border-top: dashed 1px #ccc;
+	padding-top: 1em;
+	  ul {
+		list-style-type: none;
+		padding: 0 0 1rem 0;
+		.form-check {
+		  margin: 0;
+		}
+		&:last-child {
+			border: 0;
+			padding-bottom: 0;
+		}
+	  }
+	  &:first-child {
+		border: 0;
+		padding-top: 0;
+	  }
+	}
+	
+  .dropdown-toggle {
+	float: right;
+	padding: .3em .8em;
+	@media screen and (max-width: 1200px) {
+		padding: .3em .6em; 
+	}
+	@media screen and (max-width: 1024px) {
+		padding: .3em .5em; 
+	}
+	&:after {
+	clear: both;
+	}
+  }
+  .dropdown {
+	margin-bottom: 1em;
+	strong {
+		line-height: 1.8em;
+	}
+  }
+  .dropdown-menu {
+	top: auto;
+	right: 0;
+	left: auto;
+  }
+}
+.form-check-input {
+	&:only-child {
+		position: absolute;
+	}
+}
+
+@include media-breakpoint-up(md) {
+  .filterwrap {
+    .collapse {
+      display: block;
+    }
+  }
+}

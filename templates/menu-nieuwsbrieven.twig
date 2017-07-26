@@ -1,0 +1,10 @@
+{% if nieuwsbrieven %}
+	<ul>
+	{% for item in nieuwsbrieven %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% include "menu-nieuwsbrieven.twig" with {'nieuwsbrieven': item.get_children} %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

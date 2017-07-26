@@ -1,0 +1,47 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<header class="header" >
+			{% block header %}
+				<div class="container">
+					<nav id="nav-main" class="navbar navbar-toggleable-md" role="navigation">
+						<a class="navbar-brand" href="{{site.url}}" rel="home"><img src="{{site.theme.link}}/assets/images/Logo-DFO.png" /></a>
+						 <div class="mainmenu" id="navbarNavDropdown">
+							{% include "menu-hoofd.twig" with {'hoofdmenu': hoofdmenu.get_items} %}
+						</div>
+						 <div class="collapse navbar-collapse">
+							{{ function('theme_menu') }}
+						</div>
+					</nav><!-- #nav -->
+				</div>
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

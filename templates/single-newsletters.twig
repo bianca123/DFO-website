@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="container page-container newsletters">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="sidebar">
+					<h4>Nieuwsbrieven</h4>
+					{% include "menu-nieuwsbrieven.twig" with {'nieuwsbrieven': nieuwsbrieven.get_items} %}
+				</div>
+			</div>
+			<div class="col-md-9">
+				<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+					<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
+					<section class="article-content">
+						<h1 class="article-h1">{{ post.title }}</h1>
+						<span class="date">{{ post.date }}</span>
+						<div class="article-body">
+							{{post.content}}
+						</div>
+					</section>
+
+				</article>
+			</div>
+		</div>
+	</div><!-- /container -->
+{% endblock %}

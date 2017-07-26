@@ -1,0 +1,10 @@
+<article class="tease tease-{{post.post_type}}" id="tease-{{post.ID}}">
+	{% block content %}
+		<h3><a href="{{post.link}}">{{post.title}}</a></h3>
+		<span class="date">{{ post.date }}</span>
+		<p class="intro">{{post.get_preview(60, false, '>>', false)}}</p>
+		{% if post.get_thumbnail %}
+			<img src="{{post.thumbnail.src}}" />
+		{% endif %}
+	{% endblock %}
+</article>

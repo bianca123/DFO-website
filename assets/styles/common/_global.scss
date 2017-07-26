@@ -1,0 +1,68 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: $gray;	
+}
+
+h1 {
+	font-size: 2em;
+	color: $brand-primary;
+	font-weight: 600;
+	margin-bottom: 1em;
+}
+a {
+	color: $blue;
+	}
+
+/* WIDGETS */
+
+h3.widget-title {
+	font-size: 20px;
+}
+
+/* MAIN */
+.bg-custom {
+	background-color: $brand-custom;
+}
+.content-wrapper {
+	padding-top: 5.5em;
+}
+
+.page-container {
+	padding: 2em 0;
+}
+
+/* Header */
+
+.page-header {
+	min-height: 15em;
+	padding: 2.5em 0;
+	background-color: $brand-custom;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: $brand-primary;
+	border-bottom: solid 1px $lightgrey;
+	color: $white;
+	margin-bottom: 1em;
+}
+
+/* Right of left nav */
+
+
+.left_nav,
+.right_nav {
+	background-color: $gray-lightest;
+	padding-top: 1em;
+	ul {
+		list-style: none;
+		padding-bottom: 1em;
+		padding-left: 1em;
+	}
+	h2 {
+		font-size: 1.2rem;
+	}
+}
+
+/* END Right of left nav */

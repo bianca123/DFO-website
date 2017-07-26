@@ -1,0 +1,11 @@
+<ul class="team-list">
+{% for post in post.get_field('teamleden') %}
+	<li>
+		<a target="{{ post.target }}" href="{{ post.link }}">
+			<img src="{{ post.get_field('foto_team') }}" border="0" alt="{{ post.title }}" />
+			<p>{{ post.title }}</p>
+			<span>{{ post.get_field('functie_team') }}</span>
+		</a>
+	</li>
+{% endfor %}
+</ul>

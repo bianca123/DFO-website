@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h4>Over DFO</h4>
+			{% include "menu-over.twig" with {'over': over.get_items} %}
+		</div>
+		<div class="col-md-4">
+			<h4>Nieuwsbrieven</h4>
+			{% include "menu-nieuwsbrieven.twig" with {'nieuwsbrieven': nieuwsbrieven.get_items} %}
+		</div>
+		<div class="col-md-4">
+			<h4>Contactgegevens</h4>
+				<p class="item adress"><i class="fa fa-map-marker" aria-hidden="true"></i>De Wel 14 – 16<br /> 3871 MV  Hoevelaken</p>
+				<p class="item adress"><i class="fa fa-envelope" aria-hidden="true"></i>Postbus 44<br /> 3870 CA Hoevelaken</p>
+				<p class="item"><i class="fa fa-phone" aria-hidden="true"></i>033 258 04 60</p>
+				<p class="item"><i class="fa fa-fax" aria-hidden="true"></i>033 258 03 40</p>
+				<p class="item"><i class="fa fa-at" aria-hidden="true"></i><a href="mailto:info@dfobv.nl">info@dfobv.nl</a></p>
+		</div>
+	</div>
+	<div class="col-md-7 offset-5 copyright">
+		Copyright Bureau DFO {{"now"|date('Y')}}
+	</div>
+</div>	

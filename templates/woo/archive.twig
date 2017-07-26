@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="product-archive">
+	{% do action('woocommerce_archive_description') %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+					{% do action('woocommerce_before_main_content') %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="sidebar">
+					<div class="item">
+						{{ function('do_shortcode', '[woocommerce_product_search submit_button="no" wpml="yes" placeholder="Zoek naar het gewenste product"]') }}
+					</div>
+					<div class="item">
+						<h4>Subthema's</h4>
+						<ul class="cat-list">
+							{% for cat in categories %}
+								{% if cat.children %}
+									{% for child in cat.children %}
+										<li><a href="{{child.link}}">{{child.name}}</a></li>
+									{% endfor %}
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="row">
+					<div class="col">
+						<div class="before-shop-loop">
+							{% do action( 'woocommerce_before_shop_loop') %}
+						</div>
+					</div>
+				</div>
+				<div class="loop">
+					{% for post in products %}
+						{% include ["woo/tease-product.twig"] %}
+					{% endfor %}
+				</div>
+
+				{% do action('woocommerce_after_shop_loop') %}
+				{% do action('woocommerce_after_main_content') %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock  %}

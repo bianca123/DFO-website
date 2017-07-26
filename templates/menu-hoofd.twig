@@ -1,0 +1,13 @@
+{% if hoofdmenu %}
+	<ul class="main-nav navbar-nav">
+		 <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="http://www.dfobv.nl" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  Thema's
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					{% for item in hoofdmenu %}
+						<a class="dropdown-item" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+					{% endfor %}
+			</div>
+	</ul>
+{% endif %}

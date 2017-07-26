@@ -1,0 +1,225 @@
+/* SIDEBAR */
+.sidebar {
+	background-color: $brand-custom;
+	padding: 1em;
+	.item {
+		margin-bottom: 1em;
+	}
+	h4 {
+		color: $brand-primary;
+		font-size: 1.5em;
+		font-weight: 600;
+		&.widget-title {
+			font-size: 1em;
+		}
+	}
+	ul {
+		padding: 0;
+		list-style: none;
+		&.berocket_aapf_widget {
+			margin-right: 0;
+		}
+	}
+	input {
+		padding: 0.8em 0.5em;
+		line-height: 1.2em;
+		border: solid 1px $lightgrey;
+		-webkit-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		width: 100% !important;
+		font-size: 0.8em;
+	}
+	button {
+		-webkit-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		background: $brand-primary;
+		line-height: 2em;
+		border: solid 1px $lightgrey;
+		color: $white;
+		margin: 0.5em 0 1em 0;
+		font-size: 0.8em;
+		padding: 0.4em 1em;
+	}
+	.wpcf7 {
+		label {
+			margin: 0;
+		}
+		input[type="submit"]{
+			background-color: $brand-primary;
+			color: white;
+		}
+	}
+}
+
+/* CONTACT PAGE */
+.contact_home,
+.contact-page,
+footer {
+	h3 {
+		font-weight: 600;
+		font-size: 2em;
+	}
+	hr {
+		width: 80%;
+		margin-left: 0;
+	}
+	p {
+		.fa {
+			font-size: 1.2em;
+			float: left;
+			width: 2em;
+		}	
+	}
+	p.adress {
+		.fa {
+			margin: .8em 0;
+			}
+	}
+	.wpcf7 {
+		h4 {
+			padding-bottom: 1em;
+		}
+		background-color: $brand-primary;
+		margin: 0;
+		padding: 1em 2em;
+		max-width: 1000px;
+		color: $white;
+		label.half {
+		width: 49% !important;
+		}
+		label.half.first {
+			margin-right: 2%;
+		}
+		.your-message {
+			textarea {
+				height: 6em;
+			}
+		}
+		input[type="submit"] {
+			width: 10em;
+			background-color: darken($offwhite,5%);
+			border: 1px solid darken($brand-primary,10%);
+			&:hover,
+			&:focus {
+				background-color: $brand-custom;
+				color: $brand-primary;
+				font-weight: bold;
+			}
+		}
+	}
+	iframe {
+		padding: 3em 0 2em 0;
+	}
+}
+footer {
+	p {
+		margin-bottom: 0.2em;
+	}
+	p.adress {
+		margin-bottom: 1em;
+	}
+}
+
+/* TEAMLEDEN */
+.teamleden,
+.coaches {
+	padding: 2em 0;	
+	.team_title {
+		text-align: center;
+		padding: 1rem 0;
+		width: 100%;
+		h3 {
+			font-weight: 600;
+			font-size: 2em;
+		}
+		h4 {
+			font-size: 1.2em;
+		}
+	}
+	.team-list {
+		padding: 0;
+		li {
+			display: inline-flex;
+			width: 11.8em;
+			height: 16.4em;
+			margin: .6em;
+			background-color: $gray-lightest;
+			border: solid 4px $gray-lightest;
+			@media screen and (max-width: 768px) {
+				margin: .4em .2em;
+			}
+			a {
+				width: 100%;
+				height: auto;
+				line-height: 1.2em;
+				img {
+					width: 100%;
+				}
+				p {
+					padding: 0.2em 0.5em;
+					margin-bottom: 0;
+				}
+				span {
+					padding: 0.2em 0.5em;
+					font-size: 0.8em;
+				}
+			}
+			a:hover {
+					text-decoration: none;
+				}
+		}
+		&:after {
+			clear: both;
+		}
+	}
+	.title {
+		text-align: center;
+		padding: 1rem 0;
+		width: 100%;
+		h3 {
+			color: $brand-primary;
+			font-weight: 400;
+			font-style: italic;
+			font-size: 2em;
+		}
+	}
+}
+.coaches {
+	background-color: $white;
+	.team_list {
+		li {
+			background-color: $gray-lightest;
+			border-color: $gray-lightest;
+		}
+	}
+}
+
+.team-page {
+	img {
+		width: 100%;
+	}
+}
+
+.tease-newsletters,
+.newsletters {
+	border-top: 1px solid $lightgrey;
+	padding: 1em 0;
+	h3 {
+		font-size: 1.4em;
+	}
+	.date {
+		display: block;
+		font-size: 0.85rem;
+		color: $grey;
+		padding-bottom: 0.5em;
+	}
+	.intro {
+		font-size: .95rem;
+		line-height: 1.4em;
+		.understrap-read-more-link {
+			display: none;
+		}
+	}
+}

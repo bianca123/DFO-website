@@ -1,0 +1,51 @@
+.header {
+	border-bottom: solid 1px $lightgrey;
+	position: fixed;
+	width: 100%;
+	background-color: $white;
+	height: 5.5em;
+	z-index: 10;
+	.mainmenu {
+		width: 20%;
+	}
+	
+	/* NAVBAR BRAND */
+	.navbar-brand {
+		margin-right: 2em;
+		img {
+			width: 36em;
+			max-width: 260px;
+		}
+	}
+
+	/* NAVBAR */
+	.main-nav {
+		li {
+			a.dropdown-toggle {
+				border: solid 1px $lightgrey;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+				font-size: 1.2em;
+				&:hover .dropdown-menu {
+					display: block;
+				}
+			}
+		}
+	}
+
+	/* MAINNAV */
+	.meta-nav {
+		li {
+			a {
+				color: $gray;
+				padding-left: 1em;
+				&:hover,
+				&:focus {
+					color: $blue;
+				}
+			}
+		}
+	}
+	
+}

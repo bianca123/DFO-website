@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="page-header" style="background-image: url('{{post.thumbnail.src}}');"></div>
+	<div class="container page-container contact-page">
+	
+		<div class="row">
+			<div class="col-md-3">
+				<div class="sidebar">
+					<h4>Over DFO</h4>
+					{% include "menu-over.twig" with {'over': over.get_items} %}
+				</div>
+			</div>
+			<div class="col-md-9">
+				<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+					<section class="article-content">
+						<h1 class="article-h1">{{post.title}}</h1>
+						<div class="article-body">
+							{{post.content}}
+						</div>
+					</section>
+				</article>
+		</div>
+		
+	</div><!-- /content-wrapper -->
+{% endblock %}

@@ -1,0 +1,10 @@
+{% if metamenu %}
+	<ul id="meta-menu" class="meta-nav navbar-nav">
+	{% for item in metamenu %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% include "menu-meta.twig" with {'metamenu': item.get_children} %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}
