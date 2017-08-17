@@ -10,28 +10,49 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3">
-				<div class="sidebar">
-					<div class="item">
+			<div class="col-lg-3">
+				<div class="sidebar row">
+					<div class="item col-md-6 col-lg-12">
 						{{ function('do_shortcode', '[woocommerce_product_search submit_button="no" wpml="yes" placeholder="Zoek naar het gewenste product"]') }}
 					</div>
-					<div class="item">
-						<h4>Subthema's</h4>
-						<ul class="cat-list">
+					<div class="item col-md-6 col-lg-12">
 							{% for cat in categories %}
-								{% if cat.children %}
-									{% for child in cat.children %}
-										<li><a href="{{child.link}}">{{child.name}}</a></li>
-									{% endfor %}
+								{% if cat.name == category.name or cat.term_id == category.parent  %}
+								<h4>Subthema's</h4>
+								<ul class="cat-list">
+						
+									{% if cat.children %}
+										{% for child in cat.children %}
+											<li><a href="{{child.link}}">{{child.name}}</a></li>
+										{% endfor %}
+									{% endif %}
+									</ul>
 								{% endif %}
 							{% endfor %}
-						</ul>
+							
 					</div>
 				</div>
 			</div>
-			<div class="col-md-9">
+			<div class="col-lg-9">
 				<div class="row">
 					<div class="col">
+						
+						{% for cat in categories %}
+							{% if cat.name == category.name %}
+								{% if cat.get_field('uitgelicht')|length > 0 or cat.get_field('extra_tekst') %}
+									<div class="hero-product">
+									{% if cat.get_field('uitgelicht')|length > 0 %}
+										{% include "woo/products-slide.twig" %}
+									{% else %}
+										{{ cat.get_field('extra_tekst') }}
+									{% endif %}
+								</div>
+								<div class="uitgelicht">
+									<h4>Uitgelicht</h4>
+								</div>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
 						<div class="before-shop-loop">
 							{% do action( 'woocommerce_before_shop_loop') %}
 						</div>

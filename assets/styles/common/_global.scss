@@ -26,10 +26,20 @@ h3.widget-title {
 }
 .content-wrapper {
 	padding-top: 5.5em;
+	@media screen and (max-width: 645px) {
+		padding-top: 4.5em;
+	}
 }
 
 .page-container {
-	padding: 2em 0;
+	margin: 0 auto 2em auto;
+}
+
+.breadcrumbs {
+	font-size: .92em;
+    color: #777;
+	padding-bottom: 1em;
+	display: block;
 }
 
 /* Header */
@@ -49,20 +59,3 @@ h3.widget-title {
 }
 
 /* Right of left nav */
-
-
-.left_nav,
-.right_nav {
-	background-color: $gray-lightest;
-	padding-top: 1em;
-	ul {
-		list-style: none;
-		padding-bottom: 1em;
-		padding-left: 1em;
-	}
-	h2 {
-		font-size: 1.2rem;
-	}
-}
-
-/* END Right of left nav */

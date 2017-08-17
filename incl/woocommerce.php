@@ -195,3 +195,29 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
         $term_array[] = $term->name;
     }
 }
+
+function give_profile_name(){
+    $user=wp_get_current_user();
+    if(!is_user_logged_in())
+        $name = "Inloggen";
+    else
+         $name='Welkom '.$user->user_firstname.' '.$user->user_lastname; 
+    return $name;
+}
+
+add_shortcode('profile_name', 'give_profile_name');
+
+add_filter( 'wp_nav_menu_objects', 'my_dynamic_menu_items' );
+function my_dynamic_menu_items( $menu_items ) {
+    foreach ( $menu_items as $menu_item ) {
+        if ( '#profile_name#' == $menu_item->title ) {
+            global $shortcode_tags;
+            if ( isset( $shortcode_tags['profile_name'] ) ) {
+                // Or do_shortcode(), if you must.
+                $menu_item->title = call_user_func( $shortcode_tags['profile_name'] );
+            }    
+        }
+    }
+
+    return $menu_items;
+} 

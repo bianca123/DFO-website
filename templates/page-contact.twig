@@ -3,7 +3,7 @@
 {% block content %}
 <div class="page-header" style="background-image: url('{{post.thumbnail.src}}');"></div>
 	<div class="container page-container contact-page">
-	
+		{{ function('do_shortcode', '[wpseo_breadcrumb]') }}
 		<div class="row">
 			<div class="col-md-3">
 				<div class="sidebar">

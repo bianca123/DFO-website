@@ -2,19 +2,56 @@
 
 {% block content %}
 	<div class="container page-container">
+	<span class="breadcrumbs">{{ function('do_shortcode', '[wpseo_breadcrumb]') }}</span>
 		<div class="row">
 			<div class="col-md-3">
 				<div class="sidebar">
-					<h4>Nieuwsbrieven</h4>
-					{% include "menu-nieuwsbrieven.twig" with {'nieuwsbrieven': nieuwsbrieven.get_items} %}
+					<div class="item col-md-6 col-lg-12">
+						<form role="search" method="get" id="searchform" action="{{site.url}}">
+							<input type="text" value="" name="s" id="s" placeholder="{{ __('Zoeken', 'timber-foundation')|e }}">
+						</form>
+					</div>
+					<div class="item col-md-6 col-lg-12">
+						<h4>Nieuwsbrieven</h4>
+						{% include "menu-nieuwsbrieven.twig" with {'nieuwsbrieven': nieuwsbrieven.get_items} %}
+					</div>
 				</div>
 			</div>
 			<div class="col-md-9">
-				<h1>{{ term.name }}</h1>
-				<p>{{ term.description }}</p>
+				{% if title %}
+					<h1>{{ title }}</h1>
+				{% else %}
+					<h1>{{ term.name }}</h1>
+					<p>{{ term.description }}</p>
+				{% endif %}
 				{% for post in posts %}
 					{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+				{% else %}
+					<p>Er zijn geen berichten gevonden die matchen met uw zoekwoord. Probeer het nogmaals met een ander zoekwoord.</p>
 				{% endfor %}
+				<div class="tool-pagination">
+					<ul class="pages">
+						{% if pagination.prev %}
+							<li>
+								<a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">&larr;</a>
+							</li>
+						{% endif %}
+						{% for page in pagination.pages %}
+							<li>
+								{% if page.link %}
+									<a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+								{% else %}
+									<span class="{{page.class}}">{{page.text}}</span>
+								{% endif %}
+							</li>
+						{% endfor %}
+						{% if pagination.next %}
+							<li>
+								<a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">&rarr;</a>
+							</li>
+						{% endif %}
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

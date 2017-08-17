@@ -7,12 +7,14 @@
 
 	<div class="container" id="content" tabindex="-1">
 		<div class="row">
-			<div class="col-md-5 home-hero-tekst">
+			<div class="col-lg-5 col-md-6 home-hero-tekst">
 				{{ post.get_field('home_hero_tekst') }}
 			</div>
-			<div class="col-md-6 offset-1">
-				<div class="home-hero-product">
-				{% include "shared/products-slide.twig" %}
+			<div class="col-md-5 offset-lg-1 offset-md-1 col-lg-6">
+				<div class="hero-product">
+				{% if post.get_field('producten_home')|length > 0 %}
+					{% include "shared/products-slide.twig" %}
+				{% endif %}
 				</div>
 				<div class="uitgelicht">
 					<h4>Uitgelichte producten</h4>
@@ -32,7 +34,7 @@
 				<h2>Kies hieronder het thema van uw vakgebied</h2>
 				<p>Bureau DFO heeft het aantal vakgebieden onderverdeeld in verschillende thema's. Klik op de thema's voor producten behorende bij uw eigen vakgebied of specialisme.</p>
 				<ul>
-					<li><a href="{{site.link}}/product-categorie/hypotheken/" class="small">
+					<li><a href="{{site.link}}/product-categorie/hypotheken/" class="smaller">
 						<i class="fa fa-home" aria-hidden="true"></i> 
 						<h3>Hypotheken & Kredieten</h3>
 					</a></li>
@@ -93,17 +95,17 @@
 					<li><a href="{{site.link}}/congressen">
 						<i class="fa fa-calendar" aria-hidden="true"></i> 
 						<h3>Congressen</h3>
-						<p>Congressen zijn de ideaal om met een doelgroep in contact te treden</p>
+						<p>Congressen zijn ideaal om met een doelgroep in contact te treden</p>
 					</a></li>
-					<li><a href="http://sp.deno.nl/" target="_blank">
+					<li><a href="http://sp.deno.nl/" target="_blank" class="smaller">
 						<i class="fa fa-info-circle" aria-hidden="true"></i>
 						<h3>Serviceprovider</h3>
 						<p>Objectieve informatie over de dienstverlening van een groot aantal serviceproviders</p>
 					</a></li>
-					<li><a href="http://www.expertisegroepschade.nl/" target="_blank">
+					<li><a href="http://www.expertisegroepschade.nl/" target="_blank" class="smaller">
 						<i class="fa fa-graduation-cap" aria-hidden="true"></i> 
 						<h3>Expertisegroep</h3>
-						<p>Objectieve informatie over de dienstverlening van een groot aantal serviceproviders</p>
+						<p>Hét platform voor specialisten in afwikkeling schadeverzekeringen</p>
 					</a></li>
 				</ul>
 			</div>
@@ -116,12 +118,12 @@
 	<div class="container" id="content" tabindex="-1">
 	
 		<div class="row">
-			<div class="col-md-7 col-sm-8">
+			<div class="col-lg-7">
 				<h2>{{ post.get_field('contact_title') }}</h2>
 				{{ post.get_field('adres_1') }}
-				<iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9788.844012746065!2d5.465621!3d52.166857!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6461e8b92bf4b%3A0xe4d2d369c8aa107c!2sDe+Wel+14%2C+3871+MV+Hoevelaken%2C+Nederland!5e0!3m2!1snl!2sus!4v1496049926582" width="80%" height="300px" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+				<iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9788.844012746065!2d5.465621!3d52.166857!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6461e8b92bf4b%3A0xe4d2d369c8aa107c!2sDe+Wel+14%2C+3871+MV+Hoevelaken%2C+Nederland!5e0!3m2!1snl!2sus!4v1496049926582" width="80%" height="325px" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 			</div>
-			<div class="col-md-5">
+			<div class="col-lg-5">
 				{{ function('do_shortcode', '[contact-form-7 id="256" title="Neem contact met ons op"]') }}
 			</div>
 		</div>

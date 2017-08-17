@@ -1,5 +1,6 @@
 <?php
 // Includes
+include 'incl/includes.php';
 include 'incl/setup.php';
 include 'incl/woocommerce.php';
 

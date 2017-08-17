@@ -18,7 +18,11 @@ $templates = array( 'archive.twig', 'index.twig' );
 
 $context = Timber::get_context();
 
-$context['title'] = 'Archive';
+/*
+global $wp; 
+var_dump($wp);die();
+*/
+
 $context['term'] = new Timber\Term();
 if ( is_day() ) {
 	$context['title'] = 'Archive: '.get_the_date( 'D M Y' );
@@ -38,6 +42,7 @@ if ( is_day() ) {
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
 }
 
+$context['pagination'] = Timber::get_pagination();
 $context['posts'] = Timber::get_posts();
 
 Timber::render( $templates, $context );

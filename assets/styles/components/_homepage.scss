@@ -5,7 +5,6 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-
 	border-bottom: solid 1px $lightgrey;
 	.home-hero-tekst {
 		color: $white;
@@ -22,6 +21,9 @@
 			float: left;
 			width: 80% !important;
 			font-size: 0.8em;
+			@media screen and (max-width: 768px) {
+				width: 75% !important;
+			}
 		}
 		button {
 			-webkit-border-top-right-radius: 3px;
@@ -37,140 +39,6 @@
 			margin-left: -2px;
 			font-size: 0.8em;
 			padding: 0.4em 1em;
-		}
-	}
-	.home-hero-product {
-		position: relative;
-		background: rgb(0, 118, 191);
-		background: rgba(0, 118, 191, 0.8);
-		-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-		-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-		box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-		-webkit-transition: background-color 0.5s ease; /* Safari */
-		padding: 3.3em 2.5em 1.5em 2.5em;
-		color: $white;
-		max-height: 15em;
-		overflow: hidden;
-		ul.products {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			flex-direction: row;
-			display: flex;
-			width: 100%;
-			min-height: 100px;
-			li {
-				display: list-item;
-				float: left;
-				min-width: 100%;
-				margin: 0 1.5em;
-				h3 {
-					font-size: 1.4em;
-				}
-				img {
-					width: 100%;
-				}
-				a {
-					padding: 0.3em 0.5em;
-					background: $lightgrey;
-					-webkit-border-radius: 3px;
-					-moz-border-radius: 3px;
-					border-radius: 3px;
-					color: $gray;
-					&:hover,
-					&:focus {
-						text-decoration: none;
-						background-color: $green;
-						color: $white;
-					}
-				}
-				.price {
-					color: #75ba58;
-				}
-			}
-		}
-		ul.dots {
-			list-style: none;
-			padding: 0 43%;
-			margin: 0;
-			display: flex;
-			width: 100%;
-			text-decoration: center;
-			li {
-				padding: 0 0.2em;
-				a {
-					color: $white;
-					font-size: 0.6em;
-					&:hover,
-					&:focus,
-					&:active {
-						text-decoration: none;
-						color: darken($brand-custom, 20%);
-					}
-				}
-			}
-		}
-	}
-	.uitgelicht {
-			position: absolute;
-			left: 5px;
-			top: 8px;
-			h4 {
-				font-size: 1em;
-				background-color: $brand-custom;
-				color: $brand-primary;
-				padding: 0.2em 0.5em;
-			}
-		}
-}
-
-.themes {
-	padding: 1.5em 0;
-	h2 {
-		color: $brand-primary;
-	}
-	ul {
-		list-style: none;
-		padding: 0;
-		.menu-item-has-children {
-			display: inline-block;
-			width: 30%;
-			margin: 1em;
-			border: solid 1px $lightgrey;
-			a {
-				display: block;
-				padding: 0.2em 0.7em;
-				font-size: 1.2em;
-				-webkit-transition: background-color 0.5s ease; /* Safari */
-				transition: background-color 0.5s ease;
-				.fa {
-					display: none;
-				}
-				&:hover,
-				&:focus {
-					text-decoration: none;
-					background-color: $brand-custom;
-				}
-			}
-			.menu-item {
-				border-top: solid 1px $lightgrey;
-				a {
-				color: $gray;
-				font-size: 1.0em;
-				.fa {
-					float: right;
-					display: block;
-					margin-top: 0.3em;
-					}
-					&:hover,
-					&:focus {
-						background-color: $lightergrey;
-					}
-				}
-			}
-		}
-		.menu-item {
-			
 		}
 	}
 }
@@ -194,6 +62,15 @@
 			display: inline-block;
 			width: 30%;
 			margin: 1em;
+			@media screen and (max-width: 1024px) {
+				margin: 0.7em;
+			}
+			@media screen and (max-width: 768px) {
+				width: 45%;
+			}
+			@media screen and (max-width: 540px) {
+				width: 95%;
+			}
 			a {
 				display: block;
 				width: 100%;
@@ -208,11 +85,24 @@
 				.fa {
 					font-size: 62px;
 				}
+				h3 {
+					@media screen and (max-width: 1024px) {
+						font-size: 1.50rem;
+					}
+				}
 				&:hover,
 				&:focus {
 					text-decoration: none;
 					background: $brand-custom;
 					
+				}
+				&.smaller {
+					h3 {
+						font-size: 1.65rem;
+						@media screen and (max-width: 1024px) {
+							font-size: 1.40rem;
+						}
+					}
 				}
 			}
 		}
@@ -231,13 +121,42 @@
 			a {
 				background-color: $lightergrey;
 				text-align: center;
+				@media screen and (max-width: 540px) {
+					text-align: left;
+				}
 				h3 {
 					margin: 0.5em 0 0 0;
+					@media screen and (max-width: 540px) {
+						margin: 0.7em 0;
+						font-size: 1.3em;
+					}
 				}
-				&.small {
+				.fa {
+					@media screen and (max-width: 540px) {
+						float: left;
+						margin: 0 0.3em 0 0.1em;
+						width: 1.1em;
+						font-size: 50px;
+					}
+				}
+				&.smaller {
 					h3 {
-						font-size: 2.2em;
-						line-height: 1.3em;
+						@media screen and (min-width: 540px) and (max-width: 640px) {
+							font-size: 1.10rem;
+							margin-top: 1em;
+						}
+						@media screen and (max-width: 540px) {
+							margin: 0.7em 0;
+							font-size: 1.3em;
+						}
+					}
+					.fa {
+						@media screen and (max-width: 540px) {
+							float: left;
+							margin: 0 0.3em 0 0.1em;
+							width: 1.1em;
+							font-size: 50px;
+						}
 					}
 				}
 			}
@@ -254,9 +173,40 @@
 					float: left;
 					font-size: 62px;
 					margin: 0.5em 0.5em 0.5em 0;
+					@media screen and (max-width: 1024px) {
+						font-size: 56px;
+						margin: 0.5em 0.3em 0.5em 0;
+					}
+					@media screen and (max-width: 640px) {
+						margin: 0em 1.2em 0.5em 1.2em;
+					}
+					@media screen and (max-width: 540px) {
+						margin: 0.2em 0.5em;
+						width: 1.1em;
+					}
 					&.fa-graduation-cap {
-						margin: 0.7em 0.35em 0.7em 0;
-						font-size: 54px;
+						font-size: 58px;
+					}
+				}
+				p {
+					@media screen and (max-width: 1024px) {
+						font-size: 0.9rem;
+					}
+				}
+				&.smaller {
+					.fa,
+					&.fa-graduation-cap {
+						@media screen and (max-width: 1024px) {
+							font-size: 50px;
+							margin: 0.7em 0.3em 0.7em 0;
+						}
+						@media screen and (max-width: 640px) {
+							margin: 0em 1.2em 0.5em 1.2em;
+							font-size: 54px;
+						}
+						@media screen and (max-width: 540px) {
+							margin: 0.2em 0.5em;
+						}
 					}
 				}
 			}
@@ -266,8 +216,4 @@
 
 .contact_home {
 	margin: 2em 0;
-	iframe {
-		padding: 0 !important;
-		margin-top: 1.5em; 
-	}
 }

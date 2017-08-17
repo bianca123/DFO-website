@@ -2,6 +2,9 @@
 .sidebar {
 	background-color: $brand-custom;
 	padding: 1em;
+	@media screen and (max-width: 768px) {
+		margin-bottom: 1em;
+	}
 	.item {
 		margin-bottom: 1em;
 	}
@@ -16,9 +19,7 @@
 	ul {
 		padding: 0;
 		list-style: none;
-		&.berocket_aapf_widget {
-			margin-right: 0;
-		}
+		margin: 0;
 	}
 	input {
 		padding: 0.8em 0.5em;
@@ -64,6 +65,9 @@ footer {
 	hr {
 		width: 80%;
 		margin-left: 0;
+		@media screen and (max-width: 768px) {
+			width: 100%;
+		}
 	}
 	p {
 		.fa {
@@ -80,37 +84,47 @@ footer {
 	.wpcf7 {
 		h4 {
 			padding-bottom: 1em;
+			@media screen and (max-width: 1024px) {
+				font-size: 1.3rem;
+			}
 		}
 		background-color: $brand-primary;
 		margin: 0;
 		padding: 1em 2em;
 		max-width: 1000px;
 		color: $white;
-		label.half {
-		width: 49% !important;
-		}
-		label.half.first {
-			margin-right: 2%;
-		}
 		.your-message {
 			textarea {
 				height: 6em;
 			}
 		}
+		input,
+		textarea {
+			width: 100%;
+		}
 		input[type="submit"] {
 			width: 10em;
 			background-color: darken($offwhite,5%);
 			border: 1px solid darken($brand-primary,10%);
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
 			&:hover,
 			&:focus {
 				background-color: $brand-custom;
 				color: $brand-primary;
-				font-weight: bold;
 			}
 		}
 	}
 	iframe {
-		padding: 3em 0 2em 0;
+		padding: 2em 0 0 0;
+		@media screen and (max-width: 1024px) {
+			height: 315px;
+		}
+		@media screen and (max-width: 768px) {
+			padding: 2em 0 2em 0;
+			width: 100%;
+		}
 	}
 }
 footer {
@@ -202,7 +216,7 @@ footer {
 	}
 }
 
-.tease-newsletters,
+.tease,
 .newsletters {
 	border-top: 1px solid $lightgrey;
 	padding: 1em 0;
@@ -215,11 +229,81 @@ footer {
 		color: $grey;
 		padding-bottom: 0.5em;
 	}
-	.intro {
+	p {
 		font-size: .95rem;
 		line-height: 1.4em;
 		.understrap-read-more-link {
 			display: none;
 		}
+	}
+}
+.newsletters {
+	border-top: none;
+}
+.tease {
+	img {
+		width: 100%;
+	}
+}
+
+/* PAGINATION */
+.tool-pagination {
+	text-align: center;
+	ul {
+		display: inline-block;
+		white-space: nowrap;
+		padding: 0;
+		clear: both;
+		border: 1px solid #d3ced2;
+		border-right: 0;
+		margin: 1px;
+		li {
+			border-right: 1px solid #d3ced2;
+			padding: 0;
+			margin: 0;
+			float: left;
+			display: inline-block;
+			overflow: hidden;
+			a {
+				margin: 0;
+				text-decoration: none;
+				padding: 0;
+				line-height: 1;
+				font-size: 1em;
+				font-weight: 400;
+				padding: .5em;
+				min-width: 1em;
+				display: block;
+				&:hover,
+				&:focus {
+					background: #ebe9eb;
+					color: #8a7e88;
+				}
+			}
+			span {
+				margin: 0;
+				text-decoration: none;
+				padding: 0;
+				line-height: 1;
+				font-size: 1em;
+				font-weight: 400;
+				padding: .5em;
+				min-width: 1em;
+				display: block;
+				&.current {
+					background: #ebe9eb;
+					color: #8a7e88;
+				}
+				&.dots:after {
+					content: "...";
+				}
+			}
+		}
+	}
+} 
+.siTabB {
+	width: 240px !important;
+	.siButtonActionUp  {
+		display: none;
 	}
 }

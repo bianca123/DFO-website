@@ -10,12 +10,20 @@
 		<header class="header" >
 			{% block header %}
 				<div class="container">
-					<nav id="nav-main" class="navbar navbar-toggleable-md" role="navigation">
+					<nav id="nav-main" class="navbar navbar-toggleable-md navbar-light" role="navigation">
+						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
 						<a class="navbar-brand" href="{{site.url}}" rel="home"><img src="{{site.theme.link}}/assets/images/Logo-DFO.png" /></a>
-						 <div class="mainmenu" id="navbarNavDropdown">
-							{% include "menu-hoofd.twig" with {'hoofdmenu': hoofdmenu.get_items} %}
-						</div>
-						 <div class="collapse navbar-collapse">
+						 <div class="collapse navbar-collapse" id="navbarNavDropdown">
+							<ul class="main-nav navbar-nav">
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="http://www.dfobv.nl" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thema's</a>
+									<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+										{% include "menu-hoofd.twig" with {'hoofdmenu': hoofdmenu.get_items} %}
+									</ul>
+								</li>
+							</ul>
 							{{ function('theme_menu') }}
 						</div>
 					</nav><!-- #nav -->
@@ -41,7 +49,7 @@
 			<footer id="footer">
 				{% include 'footer.twig' %}
 			</footer>
-			{{ function('wp_footer') }}
+			{{ function('wp_footer') }}		
 		{% endblock %}
 	</body>
 </html>

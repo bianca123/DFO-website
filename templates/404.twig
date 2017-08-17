@@ -1,5 +1,14 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+<div class="container page-container">
+	<div class="row">
+		<div class="col">
+		<h1>Sorry, de pagina is niet gevonden</h1>
+		<p>De pagina bestaat niet (meer) of is verplaatst. Wij helpen je graag verder. Bezoek onze <a href="/">homepage</a>, gebruik de zoekfunctie of stuur een e-mail.</p>
+		<form role="search" method="get" id="searchform" action="{{site.url}}">
+			<input type="text" value="" name="s" id="s" placeholder="{{ __('Zoeken', 'timber-foundation')|e }}">
+		</form>
+	</div>
+</div>
 {% endblock %}

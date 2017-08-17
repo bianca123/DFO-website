@@ -6,13 +6,133 @@
 			margin-top: 1rem;
 		}
 	}
+	.col2-set {
+		@media screen and (min-width: 540px) {
+			max-width: 100% !important;
+		}
+	}
 }
 .woocommerce,
 .woocommerce-page {
 	.col2-set {
 		.col-1,
 		.col-2 {
+			max-width: 100%;
+		}
+		@media screen and (min-width: 540px) {
 			max-width: 48%;
 		}
 	}
 }
+
+.woocommerce-cart,
+.woocommerce-checkout {
+	a,
+	input {
+		&.button {
+			&.alt {
+				background-color: $green;
+				&:hover {
+					background-color: darken($green, 20%);
+				}
+			}
+		}
+	}
+	#yith-wcms-back-to-cart-button {
+		background-color: $brand-custom;
+		color: $brand-primary;
+	}
+}
+
+/* Form checkout */
+
+#yith-wcms-back-to-cart-button {
+	float: left;
+}
+#checkout_timeline.horizontal.text {
+	li {
+		background-color: $brand-custom;
+		padding-right: 0 !important;
+		width: 24.9%;
+		display: block;
+		float: left;
+		@media screen and (max-width: 768px) {
+			width: 49%;
+			margin-bottom: 1px;
+		}
+		@media screen and (max-width: 540px) {
+			width: 99%;
+		}
+		&:not(:last-child) {
+			margin-right: 1px;
+			.timeline-wrapper:after {
+				content: "" !important;
+			}
+		}
+		.timeline-step {
+			display: block !important;
+			padding: 12px 5px !important;
+			float: left;
+			@media screen and (max-width: 768px) {
+				width: 25px;
+			}
+			&:after {
+				content: "" !important;
+			}
+		}
+		.timeline-label {
+			display: block !important;
+			float: left;
+			width: auto;
+			padding: 12px 5px !important;
+			&:after {
+				clear: both;
+			}
+		}
+	}
+	li.timelinesmall {
+		width: 19.9%;
+		.timeline-label {
+			font-size: 0.8em;
+			line-height: 1.7em;
+		}
+	}
+	li.active {
+		background-color: $brand-primary;
+		color: $white;
+		font-weight: normal;
+	}
+}
+form.checkout.woocommerce-checkout,
+#checkout_login {
+	@media (min-width: 992px) {
+		width: 60%;
+	}
+}
+.woocommerce-info {
+	background-color: $brand-custom;
+	border: 1px solid darken( $brand-custom, 20% );
+}
+#ship-to-different-address {
+	background-color: #dff0d8;
+	border: solid 1px #d0e9c6;
+	color: #3c763d;
+	padding: .5em;
+}
+.woocommerce-product-search {
+	.search-field {
+		border: solid 1px $gray-lighter;
+		padding: .2em .5em;
+		width: 20em;
+	}
+	button {
+		background-color: $white;
+		border: 0;
+		padding: .2em .5em;
+		margin-left: -2.3em;
+		.fa {
+			color: $brand-primary;
+		}
+	}
+}
+
